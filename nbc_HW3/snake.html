@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <script id="snakeScript" src="snake.js"></script>
+   <style>
+       #wrapper{
+           margin-left: 500px;
+           position:relative;
+           width: 1500px;
+           height: 750px;
+       }
+        #snakeCanvas
+        {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 1500px;
+            height: 750px;
+            grid-template-rows: repeat(15, 50px);
+            grid-template-columns: repeat(30, 50px);
+
+            background-image:
+                    linear-gradient(45deg, darkgreen 25%, transparent 25%),
+                    linear-gradient(135deg, darkgreen 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, darkgreen 75%),
+                    linear-gradient(135deg, transparent 75%, darkgreen 75%);
+            background-color: green;
+            background-size: 100px 100px;
+            background-position: 0 0, 50px 0, 50px -50px, 0 50px;
+        }
+        #fruitCanvas
+        {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 1500px;
+            height: 750px;
+            z-index: 5;
+            border-style: ridge;
+            border-width: 10px;
+            border-color: darkgreen;
+        }
+        #heading
+        {
+            color: darkgreen;
+            text-decoration: overline underline;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        #startBtn
+        {
+            border-color: darkgreen;
+            border-width: 10px;
+            border-style: ridge;
+            font-size: 50px;
+            color: white;
+            background-color: green;
+            margin-right: 250px;
+            margin-left: 250px;
+        }
+        .float-next
+        {
+            display: inline-block;
+            border-style: ridge;
+            border-color: darkgreen;
+            font-size: 50px;
+            background-color: green;
+            color: white;
+            border-width: 10px;
+            margin-top: 25px;
+        }
+       #leftBtn
+       {
+           border-color: darkgreen;
+           border-width: 10px;
+           border-style: ridge;
+           font-size: 50px;
+           color: white;
+           background-color: green;
+           margin-right: 10px;
+       }
+       #upBtn
+       {
+           border-color: darkgreen;
+           border-width: 10px;
+           border-style: ridge;
+           font-size: 50px;
+           color: white;
+           background-color: green;
+           margin-right: 10px;
+       }
+       #rightBtn
+       {
+           border-color: darkgreen;
+           border-width: 10px;
+           border-style: ridge;
+           font-size: 50px;
+           color: white;
+           background-color: green;
+       }
+       #downBtn
+       {
+           border-color: darkgreen;
+           border-width: 10px;
+           border-style: ridge;
+           font-size: 50px;
+           color: white;
+           background-color: green;
+           margin-right: 10px;
+       }
+        #head2
+        {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            text-decoration: overline underline;
+            text-decoration-color: darkgreen;
+
+        }
+   </style>
+</head>
+<body align="center" style="background-color: bisque">
+<H1 id="heading">Snake Game</H1>
+<h2 id="head2">Arrow keys also work here.</h2>
+<div id="wrapper">
+    <canvas id="snakeCanvas" width="1500" height="750"></canvas>
+    <canvas id="fruitCanvas" width="1500" height="750"></canvas>
+</div>
+<div id="parent">
+    <p id="score" class="float-next">Score: 0</p>
+    <input id="startBtn" type="button" value="Start" onclick="pause(snakeCanvas, fruitCanvas);"/>
+    <input id="leftBtn" type="button" value="Left" onclick="changeDir('left');"/>
+    <input id="upBtn" type="button" value="Up" onclick="changeDir('up');"/>
+    <input id="downBtn" type="button" value="Down" onclick="changeDir('down');"/>
+    <input id="rightBtn" type="button" value="Right" onclick="changeDir('right');"/>
+</div>
+
+</body>
+</html>

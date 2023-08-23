@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Validation Form</title>
+		
+		<script id="myScript" src="validation1.js"></script>
+		
+		<!-- Style the error messages, looks better this way -->
+		<style>
+			.errorMessage
+			{
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1> Validation Form </h1>
+		
+		<form id="v1Form" name="v1Form">
+
+			<p id="fName">
+				<label for="fName">First Name:</label><br>
+				<input id="fName" name="fName" type="text"/>
+			</p><br>
+
+			<p id="lName">
+				<label for="fName">Last Name:</label><br>
+				<input id="lName" name="lName" type="text"/>
+			</p><br>
+			
+			<p id="Gender">
+				<label for="Gender">Choose Gender</label>
+				<select name="Gender" id="Gender">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+					<option value="Other">Other</option>
+				</select>
+			</p><br>
+			
+			<p id="State">
+				<label for="State">Choose State</label>
+				<select name="State" id="State">
+					<option value="California">California</option>
+					<option value="Florida">Florida</option>
+					<option value="New York">New York</option>
+					<option value="Texas">Texas</option>
+					<option value="Hawaii">Hawaii</option>
+					<option Value="Washington">Washington</option>
+					<option value="Colorado">Colorado</option>
+					<option value="Virginia">Virginia</option>
+					<option value="Iowa">Iowa</option>
+					<option value="Arizona">Arizona</option>
+				</select>
+			</p><br>
+			
+			<!-- Validates all fields in form above 
+					If the above are not valid, it will display error messages on the invalid fields
+					If the above are all valid, the next page will open automatically after a short delay -->
+			<input id="continue" name="continue" type="button" value="Continue"
+					onclick="validateForm('fName'); validateForm('lName'); validateForm('Gender'); validateForm('State');"/>
+		</form>
+	</body>
+</html>

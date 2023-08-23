@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Information</title>
+		
+		<script id="myScript2" src="validation2.js"></script>
+		
+		<!-- Style the error messages, looks better this way -->
+		<style>
+			.errorMessage
+			{
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Contact Information</h1>
+		
+		<form id="contactForm" name="contactForm">
+			<p id="Email">
+				<label for="Email">Email:</label><br>
+				<input id="Email" name="Email" type="text"/>
+			</p><br>
+			
+			<p id="Phone">
+				<label for="Phone">Phone:</label><br>
+				<input id="Phone" name="Phone" type="text"/>
+			</p><br>
+			
+			<p id="Address">
+				<label for="Address">Address:</label><br>
+				<input id="Address" name="Address" type="text"/>
+			</p><br>
+			
+			<!-- Page validation -->
+			<input id="Submit" name="Submit" type="Button" value="Submit"
+					onclick="validateForm('Email'); validateForm('Phone'); validateForm('Address');"/>
+		</form>
+	</body>
+</html>
